@@ -13,7 +13,7 @@
 }
 
 .menu {
-  position: sticky;
+  position: absolute;
   border-radius: 12px;
   display: flex;
   color: #e6e8f0;
