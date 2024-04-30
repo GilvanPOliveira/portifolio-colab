@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import Menu from "../../components/Menu/Menu";
 import Perfil from "../../assets/perfil.jpg";
 import * as S from "./styled";
-import DarkMode from "../../components/DarkMode/DarkMode";
 
 export default function Inicio() {
-  
   const [isDarkMode, setIsDarkMode] = useState(false);
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -13,8 +11,7 @@ export default function Inicio() {
 
   return (
     <S.MainBg className={isDarkMode ? "dark-mode" : ""}>
-      <Menu />
-      <DarkMode isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Menu toggleDarkMode={toggleDarkMode} />
       <S.Main>
         <S.Texto className={isDarkMode ? "dark-mode" : ""}>
           <p>Olá, me chamo Gilvan Oliveira, sou um desenvolvedor Front-End. </p>

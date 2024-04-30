@@ -1,20 +1,15 @@
-/* Paleta de cores:
-#19182d (Índigo Escuro) Menu
-#303651 (Azul-petróleo) Borda / Texto
-#5a61ff (Azul Elétrico) Hover img
-#8a8cff (Azul Pálido) Selecionado
-#c7d2dc (Azul Pastel) Background
-#e6e8f0 (Cinza Azulado) Texto 
-*/
-
 import styled from "styled-components";
 
 export const MainBg = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
+  padding: 12px;
   min-height: 100vh;
   background-color: #c7d2dc;
+  &.dark-mode {
+    background-color: #19182d;
+  }
   @media (max-width: 800px) {
     align-items: flex-start;
   }
@@ -33,7 +28,7 @@ export const Main = styled.div`
     padding: 12px 12px 24px 12px;
   }
   @media (max-width: 250px) {
-    margin-top: 40px;
+    margin-top: 55px;
   }
 `;
 
@@ -47,6 +42,9 @@ export const Texto = styled.div`
   p {
     text-align: justify;
   }
+  &.dark-mode {
+    color: #e6e8f0;
+  }
 `;
 
 export const Conteudo = styled.div`
@@ -54,6 +52,9 @@ export const Conteudo = styled.div`
   flex-direction: column;
   padding: 24px;
   background-color: #e6e8f0;
+  &.dark-mode {
+    background-color: #303651;
+  }
   border-radius: 12px;
   align-items: center;
   @media (max-width: 350px) {
@@ -65,18 +66,25 @@ export const Curriculo = styled.div`
   display: flex;
   padding: 24px 32px 24px 32px;
   background-color: #303651;
-  border-radius: 12px;
   color: #e6e8f0;
+  border-radius: 12px;
+  &.dark-mode {
+    background-color: #e6e8f0;
+    color: #303651;
+  }
   a {
     display: flex;
     gap: 16px;
     text-decoration: none;
     color: #e6e8f0;
-    align-items: center;
-    &:hover {
-      transform: scale(1.1);
-      transition: 0.3s;
-    }
+  }
+  &.dark-mode a {
+    color: #303651;
+  }
+  align-items: center;
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
   }
   @media (max-width: 250px) {
     padding: 12px;
@@ -90,6 +98,9 @@ export const CurriculoImg = styled.div`
   img {
     width: 50px;
     height: 50px;
+  }
+  &.dark-mode {
+    background-color: #303651;
   }
   @media (max-width: 250px) {
     img {
@@ -131,7 +142,6 @@ export const Social = styled.div`
     height: 50px;
     background-color: #fff;
     border-radius: 20%;
-    transition: 0.3s;
     &:hover {
       transform: scale(1.3);
     }
@@ -141,6 +151,7 @@ export const Social = styled.div`
     align-self: center;
   }
 `;
+
 export const Git = styled.div`
   display: flex;
   align-items: center;
@@ -158,6 +169,9 @@ export const Redes = styled.div`
   flex-direction: column;
   padding: 0 24px 0 0;
   gap: 24px;
+  &.dark-mode a {
+    color: #e6e8f0;
+  }
   p {
     font-size: clamp(0.5rem, 0.35rem + 1.3vw, 1.5rem);
   }

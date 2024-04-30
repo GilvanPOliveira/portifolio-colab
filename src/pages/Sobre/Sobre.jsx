@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Menu from "../../components/Menu/Menu";
 import * as S from "./styled";
 import figma from "../../assets/skills/figma.svg";
@@ -17,6 +18,12 @@ import curriculo from "../../assets/icon/curriculo.svg";
 import curriculoPDF from "../../assets/curriculo.pdf";
 
 export default function Sobre() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   //Currículo
   const handleDownload = (e) => {
     const confirmDownload = window.confirm(
@@ -30,14 +37,14 @@ export default function Sobre() {
   };
 
   return (
-    <S.MainBg>
-      <Menu />
-      <S.Main>
-        <S.Texto>
+    <S.MainBg className={isDarkMode ? "dark-mode" : ""}>
+      <Menu toggleDarkMode={toggleDarkMode} />
+      <S.Main className={isDarkMode ? "dark-mode" : ""}>
+        <S.Texto className={isDarkMode ? "dark-mode" : ""}>
           <div>
             <h2> Sobre mim</h2>
           </div>
-          <S.Conteudo>
+          <S.Conteudo className={isDarkMode ? "dark-mode" : ""}>
             <p>
               Me chamo Gilvan Pereira de Oliveira, tenho 32 anos, recentemente
               fiz uma transição de carreira para a área de desenvolvimento. Já
@@ -77,9 +84,9 @@ export default function Sobre() {
               />
               <img src={viteJs} title="Vite.Js" alt="Vite.js" />
             </S.Skills>
-            <S.Social>
+            <S.Social className={isDarkMode ? "dark-mode" : ""}>
               <h3>Minhas Redes:</h3>
-              <S.Redes>
+              <S.Redes className={isDarkMode ? "dark-mode" : ""}>
                 <a href="https://github.com/GilvanPOliveira" target="_blank">
                   <S.Git>
                     <img src={github} title="GitHub" alt="GitHub" />
@@ -101,7 +108,7 @@ export default function Sobre() {
               </S.Redes>
             </S.Social>
 
-            <S.Curriculo>
+            <S.Curriculo className={isDarkMode ? "dark-mode" : ""}>
               <a
                 href={curriculoPDF}
                 download="curriculo.pdf"
@@ -109,7 +116,7 @@ export default function Sobre() {
                 className="colapsar"
                 onClick={handleDownload}
               >
-                <S.CurriculoImg>
+                <S.CurriculoImg className={isDarkMode ? "dark-mode" : ""}>
                   <img src={curriculo} alt="Currículo" />
                 </S.CurriculoImg>
                 <S.CurriculoTitulo>Meu Currículo</S.CurriculoTitulo>

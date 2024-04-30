@@ -12,7 +12,14 @@ import sobre from "../../assets/icon/sobre.svg";
 import btnExpandir from "../../assets/icon/btnExpandir.svg";
 import curriculoPDF from "../../assets/curriculo.pdf";
 
-export default function Menu() {
+export default function Menu({ toggleDarkMode }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleDarkModeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+    toggleDarkMode(); // Chama a função passada por props para atualizar o estado de dark mode na página Inicio
+  };
+
   const [menu, setMenu] = useState(true);
   useEffect(() => {
     function handleResize() {
@@ -46,11 +53,6 @@ export default function Menu() {
     };
   }, []);
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   const handleDownload = (e) => {
     const confirmDownload = window.confirm(
       "Deseja efetuar o download do currículo?"
@@ -75,12 +77,8 @@ export default function Menu() {
     );
   };
 
-  const handleDarkModeToggle = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <main className={`main-bg ${isDarkMode ? "dark" : "light"}`}>
+    <main className={isDarkMode ? "dark-mode" : "light-mode"}>
       <header
         className={`menuHamburguer ${menu ? "menuAberto" : "menuFechado"}`}
       >
@@ -174,7 +172,7 @@ export default function Menu() {
                   href="#dark"
                   title="Dark Mode"
                   className="colapsar"
-                  onClick={toggleDarkMode}
+                  onClick={handleDarkModeToggle} // Alteração aqui
                 >
                   <img
                     src={isDarkMode ? moon : sun}

@@ -13,6 +13,7 @@ export const MainBg = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
+  padding: 12px;
   min-height: 100vh;
   background-color: #c7d2dc;
   &.dark-mode {

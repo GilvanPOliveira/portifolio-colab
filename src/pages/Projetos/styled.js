@@ -1,28 +1,24 @@
-/* Paleta de cores:
-#19182d (Índigo Escuro) Menu
-#303651 (Azul-petróleo) Borda / Texto
-#5a61ff (Azul Elétrico) Hover img
-#8a8cff (Azul Pálido) Selecionado
-#c7d2dc (Azul Pastel) Background
-#e6e8f0 (Cinza Azulado) Texto 
-*/
-
+// styled.js
 import styled from "styled-components";
 
 export const MainBg = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
+  padding: 12px;
   min-height: 100vh;
   background-color: #c7d2dc;
+  &.dark-mode {
+    background-color: #19182d;
+  }
   @media (max-width: 1068px) {
     align-items: flex-start;
   }
   @media (max-width: 420px) {
     flex-direction: column;
   }
-`; 
- 
+`;
+
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
@@ -32,6 +28,9 @@ export const Main = styled.div`
   h2 {
     color: #303651;
     margin-bottom: 32px;
+  }
+  &.dark-mode h2 {
+    color: #e6e8f0;
   }
   @media (max-width: 1068px) {
     margin-top: 32px;
@@ -43,7 +42,7 @@ export const Main = styled.div`
     }
   }
 `;
- 
+
 export const Projetos = styled.div`
   max-width: 900px;
   @media (max-width: 1268px) {
