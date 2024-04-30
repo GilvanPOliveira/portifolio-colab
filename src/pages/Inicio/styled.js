@@ -24,7 +24,7 @@ export const MainBg = styled.div`
   `;
 
 export const Main = styled.div`
-  padding: 24px 32px 32px 24px;
+  /* padding: 24px 32px 32px 24px; */
   display: flex;
   align-items: center;
   justify-content: center;
