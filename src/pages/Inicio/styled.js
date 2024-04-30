@@ -15,13 +15,16 @@ export const MainBg = styled.div`
   align-items: center;
   min-height: 100vh;
   background-color: #c7d2dc;
+  &.dark-mode {
+    background-color: #19182d;
+  }
   @media (max-width: 700px) {
     align-items: flex-start;
   }
   @media (max-width: 400px) {
     flex-direction: column;
   }
-  `;
+`;
 
 export const Main = styled.div`
   padding: 24px 32px 32px 24px;
@@ -76,5 +79,56 @@ export const Texto = styled.div`
   background-color: #e6e8f0;
   color: #303651;
   border-radius: 12px;
+  &.dark-mode {
+    background-color: #303651;
+    color: #e6e8f0;
+  }
 `;
 
+// Estilos para o light mode
+export const MainBgLight = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #c7d2dc;
+  @media (max-width: 700px) {
+    align-items: flex-start;
+  }
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+`;
+
+export const TextoLight = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #e6e8f0;
+  color: #303651;
+  border-radius: 12px;
+`;
+
+// Estilos para o dark mode
+export const MainBgDark = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #19182d;
+  @media (max-width: 700px) {
+    align-items: flex-start;
+  }
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+`;
+
+export const TextoDark = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: #303651;
+  color: #e6e8f0;
+  border-radius: 12px;
+`;
