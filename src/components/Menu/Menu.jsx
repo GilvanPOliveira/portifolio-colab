@@ -13,8 +13,6 @@ import btnExpandir from "../../assets/icon/btnExpandir.svg";
 import curriculoPDF from "../../assets/curriculo.pdf";
 
 export default function Menu() {
-  
-  // Menu visível - esconde e mostra o menu
   const [menu, setMenu] = useState(true);
   useEffect(() => {
     function handleResize() {
@@ -24,13 +22,12 @@ export default function Menu() {
         setMenu(false);
       }
     }
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []); 
+  }, []);
 
-  //Menu Colapsado - esconde e mostra o menu
   const [collapsed, setCollapsed] = useState(true);
   const toggleCollapse = () => {
     setCollapsed(!collapsed);
@@ -43,20 +40,17 @@ export default function Menu() {
         setCollapsed(true);
       }
     }
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  }, []); 
+  }, []);
 
-  // Dark Mode - muda imagem e cor do menu (por hora)
-  const [darkMode, setDarkMode] = useState(false);
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
   };
 
-  // Código para mostrar o alerta e baixar o Currículo
   const handleDownload = (e) => {
     const confirmDownload = window.confirm(
       "Deseja efetuar o download do currículo?"
@@ -68,10 +62,8 @@ export default function Menu() {
     alert("Obrigado pela oportunidade!");
   };
 
-  // Abre o WhatsApp em uma janela no meio da tela
   const openWhatsApp = (e) => {
     e.preventDefault();
-    // tamanho da janela
     const width = 800;
     const height = 600;
     const left = (window.screen.width - width) / 2;
@@ -83,27 +75,30 @@ export default function Menu() {
     );
   };
 
+  const handleDarkModeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <main className="main-bg">
-    <header className={`menuHamburguer ${menu ? "menuAberto" : "menuFechado"}`}>
-      <button onClick={() => setMenu(!menu)}>{menu ? "X" : "☰"}</button>
-    </header>
+    <main className={`main-bg ${isDarkMode ? "dark" : "light"}`}>
+      <header
+        className={`menuHamburguer ${menu ? "menuAberto" : "menuFechado"}`}
+      >
+        <button onClick={() => setMenu(!menu)}>{menu ? "X" : "☰"}</button>
+      </header>
       {menu && (
         <nav className={`menu ${collapsed ? "collapsed" : ""}`}>
           <div className="menu-bg">
-            {/* Logo - Titulo */}
-            <div className="menu-top">
+            <div className="logo-bg">
               <a href="https://vainaweb.com.br/" className="logo-bg">
                 <img src={vnw} alt="Logo" className="logo" />
                 <span className="menu-titulo hide">Ficha Técnica</span>
               </a>
             </div>
-            {/* Botão Expandir */}
             <div className="btnExpandir" onClick={toggleCollapse}>
               <img src={btnExpandir} alt="Botão Expandir" />
             </div>
           </div>
-          {/* Perfil do Usuário - Foto, Nome e Cargo */}
           <div className="menu-perfil">
             <div className="perfil-bg">
               <img
@@ -117,10 +112,8 @@ export default function Menu() {
               <div className="perfil-cargo">Front-End Developer</div>
             </section>
           </div>
-          {/* Links(Opções) do Menu */}
           <div className="menu-links">
             <ul>
-              {/* Início */}
               <li>
                 <a href="/" title="Início" className="colapsar">
                   <img src={home} alt="Início da página" />
@@ -131,7 +124,6 @@ export default function Menu() {
               <li>
                 <h2>Meus Dados</h2>
               </li>
-              {/* Projetos */}
               <li>
                 <a href="/projetos" title="Projetos" className="colapsar">
                   <img src={projetos} alt="Projetos do portifólio" />
@@ -139,7 +131,6 @@ export default function Menu() {
                   <span className="colapsar-item">Projetos</span>
                 </a>
               </li>
-              {/* Sobre */}
               <li>
                 <a href="/sobre" title="Sobre" className="colapsar">
                   <img src={sobre} alt="Descrição sobre o usuário" />
@@ -150,7 +141,6 @@ export default function Menu() {
               <li>
                 <h2>Contato</h2>
               </li>
-              {/* Currículo - com opção de download e mensagem de alerta */}
               <li>
                 <a
                   href={curriculoPDF}
@@ -164,7 +154,6 @@ export default function Menu() {
                   <span className="colapsar-item">Currículo</span>
                 </a>
               </li>
-              {/* WhatsApp - com opção de abrir uma conversa com mensagem em uma janela no meio da tela */}
               <li>
                 <a
                   href="https://web.whatsapp.com/send?phone=5581992581741&text=Olá,%20vamos%20conversar?"
@@ -180,23 +169,22 @@ export default function Menu() {
               <li>
                 <h2>Modo de Exibição</h2>
               </li>
-              {/* Dark Mode - com opção de mudar a imagem e a cor do menu */}
-              <li className="dark">
+              <li className={isDarkMode ? "dark-mode" : ""}>
                 <a
                   href="#dark"
                   title="Dark Mode"
                   className="colapsar"
-                  onClick={handleDarkModeToggle}
+                  onClick={toggleDarkMode}
                 >
                   <img
-                    src={darkMode ? moon : sun}
-                    alt={darkMode ? "dark" : "light"}
+                    src={isDarkMode ? moon : sun}
+                    alt={isDarkMode ? "dark" : "light"}
                   />
                   <span className="link hide">
-                    {darkMode ? "Light Mode" : "Dark Mode"}
+                    {isDarkMode ? "Light Mode" : "Dark Mode"}
                   </span>
                   <span className="colapsar-item">
-                    {darkMode ? "Light Mode" : "Dark Mode"}
+                    {isDarkMode ? "Light Mode" : "Dark Mode"}
                   </span>
                 </a>
               </li>

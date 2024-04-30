@@ -20,6 +20,7 @@
   flex-direction: column;
   background: #19182d;
   padding: 12px;
+  border: 1px solid #303651;
 }
 
 .menuHamburguer button {
@@ -204,46 +205,6 @@
   visibility: visible;
 }
 
-/* Modo Light - Menu  */
-.light .menu {
-  background: #19182d;
-  color: #e6e8f0;
-}
-.light .menu-links li a {
-  color: #e6e8f0;
-}
-.light .menu-links li a:hover {
-  color: #5a61ff;
-}
-.light .menu-links li a:hover img {
-  filter: invert(0.5) sepia(3) saturate(6) hue-rotate(180deg);
-}
-.light .menu-links h2 {
-  color: #8a8cff;
-}
-
-/* Modo Dark - Menu  */
-.dark .menu {
-  background: #303651;
-  color: #e6e8f0;
-}
-.dark .btnExpandir {
-  background: #303651;
-  border: 1px solid #19182d;
-}
-.dark .menu-links li a {
-  color: #e6e8f0;
-}
-.dark .menu-links li a:hover {
-  color: #5a61ff;
-}
-.dark .menu-links li a:hover img {
-  filter: invert(0.5) sepia(3) saturate(6) hue-rotate(180deg);
-}
-.dark .menu-links h2 {
-  color: #8a8cff;
-}
-
 /* Resposivo */
 
 @media (max-width: 680px) {
@@ -260,4 +221,45 @@
   .menu.collapsed {
     top: 70px;
   }
+}
+
+/* Modo Light - Menu */
+.light .menu {
+  background: #303651; 
+  color: #131524; 
+}
+.light .menu-links li a {
+  color: #e6e8f0; 
+}
+.light .menu-links li a:hover {
+  color: #5a61ff; 
+}
+.light .menu-links li a:hover img {
+  filter: invert(0.5) sepia(3) saturate(6) hue-rotate(180deg);
+}
+.light .menu-links h2 {
+  color: #8a8cff;
+}
+
+/* Modo Dark - Menu */
+.dark .menu {
+  background: #19182d; 
+  color: #e6e8f0; 
+}
+
+.dark .btnExpandir {
+  background: #19182d; 
+  border: 1px solid #303651; 
+}
+.dark .menu-links li a {
+  color: #e6e8f0; 
+}
+.dark .menu-links li a:hover {
+  color: #5a61ff; 
+}
+.dark .menu-links li a:hover img {
+  filter: invert(0.5) sepia(3) saturate(6) hue-rotate(180deg);
+}
+.dark .menu-links h2 {
+  color: #8a8cff; 
 }
