@@ -13,12 +13,12 @@ export const MainBg = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #c7d2dc;
-  @media (max-width: 620px) {
+  @media (max-width: 700px) {
     align-items: flex-start;
   }
-  @media (max-width: 320px) {
+  @media (max-width: 400px) {
     flex-direction: column;
   }
   `;
@@ -34,25 +34,32 @@ export const Main = styled.div`
     width: 350px;
     border-radius: 50%;
   }
-  @media (max-width: 820px) {
+  @media (max-width: 900px) {
     flex-direction: column-reverse;
+    img{
+      width: 300px;
+    }
   }
-  @media (max-width: 620px) {
-    img {
+  @media (max-width: 400px) {
+    flex-direction: column-reverse;
+    img{
       width: 250px;
     }
+    padding: 12px;
   }
-  @media (max-width: 420px) {
-    img {
+  @media (max-width: 350px) {
+    flex-direction: column-reverse;
+    img{
       width: 200px;
     }
+    margin-top: 48px;
   }
-  @media (max-width: 320px) {
-    img {
-      width: 150px;
+  @media (max-width: 250px) {
+    flex-direction: column-reverse;
+    img{
+      width: 180px;
     }
-    margin-top: 50px;
-    padding: 12px;
+    margin-top: 52px;
   }
 `;
 

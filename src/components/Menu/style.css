@@ -251,7 +251,7 @@
     display: none;
   }
   .menu {
-    position: sticky;
+    position: absolute;
     z-index: 2;
   }
   .menuHamburguer button {
