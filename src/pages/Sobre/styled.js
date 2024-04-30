@@ -139,7 +139,7 @@ export const Social = styled.div`
   gap: 24px;
   img {
     width: 50px;
-    height: 50px;
+    height: 50px; 
     background-color: #fff;
     border-radius: 20%;
     &:hover {

@@ -19,7 +19,7 @@ import curriculoPDF from "../../assets/curriculo.pdf";
 
 export default function Sobre() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
+ 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
