@@ -12,9 +12,9 @@ import styled from "styled-components";
 export const MainBg = styled.div`
   display: flex;
   text-align: center;
-  background-color: #c7d2dc;
-  min-height: 100vh;
   align-items: center;
+  min-height: 100vh;
+  background-color: #c7d2dc;
   @media (max-width: 1068px) {
     align-items: flex-start;
   }

@@ -13,7 +13,7 @@ export const MainBg = styled.div`
   display: flex;
   text-align: center;
   align-items: center;
-  height: 100vh;
+  height: 150vh; 
   background-color: #c7d2dc;
   @media (max-width: 620px) {
     align-items: flex-start;
