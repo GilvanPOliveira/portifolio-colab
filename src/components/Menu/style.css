@@ -13,7 +13,7 @@
 }
 
 .menu {
-  position: absolute;
+  position: sticky;
   border-radius: 12px;
   display: flex;
   color: #e6e8f0;
@@ -251,7 +251,7 @@
     display: none;
   }
   .menu {
-    position: absolute;
+    position: sticky;
     z-index: 2;
   }
   .menuHamburguer button {
