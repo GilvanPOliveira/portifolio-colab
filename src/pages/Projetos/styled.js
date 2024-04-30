@@ -36,7 +36,7 @@ export const Main = styled.div`
     margin-top: 32px;
   }
   @media (max-width: 250px) {
-    margin-top: 70px;
+    margin-top: 80px;
     h2 {
       margin-bottom: 24px;
     }
